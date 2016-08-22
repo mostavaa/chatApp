@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="chatAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="msg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="textMsg" Type="String" MaxLength="1150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="msgDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="userId" Type="Guid" Nullable="false" />
+    <Property Name="toId" Type="Guid" />
+    <NavigationProperty Name="user" Relationship="Self.FK_msg_user" FromRole="msg" ToRole="user" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="msgs" Relationship="Self.FK_msg_user" FromRole="user" ToRole="msg" />
+  </EntityType>
+  <Association Name="FK_msg_user">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="msg" Type="Self.msg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="msg">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="chatAppEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="msgs" EntityType="Self.msg" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <AssociationSet Name="FK_msg_user" Association="Self.FK_msg_user">
+      <End Role="user" EntitySet="users" />
+      <End Role="msg" EntitySet="msgs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

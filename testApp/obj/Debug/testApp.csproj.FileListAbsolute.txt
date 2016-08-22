@@ -1,0 +1,6 @@
+J:\desktop\signalR\simpleChat\testApp\bin\Debug\testApp.exe.config
+J:\desktop\signalR\simpleChat\testApp\bin\Debug\testApp.exe
+J:\desktop\signalR\simpleChat\testApp\bin\Debug\testApp.pdb
+J:\desktop\signalR\simpleChat\testApp\obj\Debug\testApp.exe
+J:\desktop\signalR\simpleChat\testApp\obj\Debug\testApp.pdb
+J:\desktop\signalR\simpleChat\testApp\obj\Debug\testApp.csprojResolveAssemblyReference.cache

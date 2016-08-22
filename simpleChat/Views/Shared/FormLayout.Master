@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FormLayout.Master.cs" Inherits="simpleChat.Views.Shared._FormLayout" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <%= System.Web.Optimization.Styles.Render("~/Content/css")%>
+    <%= System.Web.Optimization.Scripts.Render("~/bundles/modernizr")%>
+    
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                    <li><a class="navbar-brand" href="../../Home/Index">Chat</a></li>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../Home/Index">Home</a></li>
+                    <li><a href="../../Home/Chat">Chat</a></li>
+                    <li><a href="../../Home/About">About</a></li>
+                    <li><a href="../../Home/Contact">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <%
+                        
+                        if (simpleChat.myUser.isLogged())
+                        {
+                            simpleChat.myUser user = simpleChat.myUser.getLoggedUser();
+                            %>
+                    <li><a href="#"><%= user.username %></a></li>
+                    
+                    <%
+                        }
+                        else
+                        {
+                            %>
+                    
+                    <li><a href="../../Account/Register.aspx">Register</a></li>
+
+                    <li><a href="../../Account/Login.aspx">Login</a></li>
+                    <%
+                        }
+                         %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="container body-content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <hr />
+        <footer>
+            <p>&copy; <%= DateTime.Now.Year%> - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <%=
+    System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+         %>
+    <%=System.Web.Optimization.Scripts.Render("~/bundles/bootstrap") %>
+        <asp:ContentPlaceHolder ID="scripts" runat="server">
+        
+        </asp:ContentPlaceHolder>
+</body>
+</html>
