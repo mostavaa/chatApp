@@ -757,10 +757,13 @@ pre code {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+    /*min-width:1276px!important;*/
+    width: 1276px!important;
+  /*padding-right: 15px;
+  padding-left: 15px;*/
   margin-right: auto;
   margin-left: auto;
+  overflow-y:auto;
 }
 
 .container:before,
@@ -860,8 +863,9 @@ pre code {
 .col-lg-12 {
   position: relative;
   min-height: 1px;
+  /*
   padding-right: 15px;
-  padding-left: 15px;
+  padding-left: 15px;*/
 }
 
 .col-xs-1,
@@ -928,7 +932,7 @@ pre code {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 750px;
+    /*max-width: 750px;*/
   }
   .col-sm-1,
   .col-sm-2,
@@ -1080,9 +1084,9 @@ pre code {
   }
 }
 
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {*/
   .container {
-    max-width: 970px;
+    /*max-width: 970px;*/
   }
   .col-md-1,
   .col-md-2,
@@ -1241,11 +1245,11 @@ pre code {
   .col-md-offset-11 {
     margin-left: 91.66666666666666%;
   }
-}
+/*}*/
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1170px;
+    /*max-width: 1170px;*/
   }
   .col-lg-1,
   .col-lg-2,
@@ -4930,13 +4934,13 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
-  padding: 30px;
+  /*padding: 30px;*/
   margin-bottom: 30px;
   font-size: 21px;
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: #f7f9fa;
 }
 
 .jumbotron h1 {
@@ -4949,17 +4953,18 @@ a.list-group-item.active > .badge,
 }
 
 .container .jumbotron {
-  border-radius: 6px;
+  /*border-radius: 6px;*/
 }
 
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    /*padding-top: 48px;
+    padding-bottom: 48px;*/
   }
   .container .jumbotron {
+      /*
     padding-right: 60px;
-    padding-left: 60px;
+    padding-left: 60px;*/
   }
   .jumbotron h1 {
     font-size: 63px;
@@ -5251,7 +5256,7 @@ a.thumbnail:focus {
 
 .list-group {
   padding-left: 0;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 
 .list-group-item {
@@ -5259,19 +5264,20 @@ a.thumbnail:focus {
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  /*background-color: #ffffff;*/
+  border-bottom: 1px solid #dddddd;
 }
 
 .list-group-item:first-child {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+  /*border-top-right-radius: 4px;
+  border-top-left-radius: 4px;*/
 }
 
 .list-group-item:last-child {
   margin-bottom: 0;
+  /*
   border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;*/
 }
 
 .list-group-item > .badge {
@@ -5369,8 +5375,8 @@ a.list-group-item:focus {
 }
 
 .panel > .list-group .list-group-item:first-child {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
+  /*border-top-right-radius: 0;
+  border-top-left-radius: 0;*/
 }
 
 .panel > .list-group .list-group-item:last-child {
